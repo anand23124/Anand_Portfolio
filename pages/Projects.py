@@ -2,6 +2,14 @@ import streamlit as st
 import os
 # --- PROJECTS ---
 BLOGS = {
+    "Hume.ai: Emotionally Intelligent AI for a Better Tomorrow": {
+        "link": "https://www.linkedin.com/posts/anandsahu_artificialintelligence-emotionalintelligence-activity-7267031848931708928-BIqU?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/hume.png",  
+    },
+    "Unlocking Efficiency: Quantizing Mistral Models to 4-Bit Precision": {
+        "link": "https://www.linkedin.com/posts/anandsahu_github-anand23124quantizationmistral-activity-7266815813431480320-1NRc?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/quantization.png",  
+    },
     "📈 Python became the most popular language of 2024": {
         "link": "https://www.linkedin.com/posts/anandsahu_github-python-activity-7259448200158138369-1OTe?utm_source=share&utm_medium=member_desktop",
         "image": "./assets/blogs/python_popular.png",  
