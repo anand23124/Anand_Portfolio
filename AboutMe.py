@@ -23,6 +23,7 @@ SOCIAL_MEDIA = {
     "LinkedIn": "https://www.linkedin.com/in/anandsahu/",
     "GitHub": "https://github.com/anand23124",
     "Twitter": "https://x.com/sahu__anand_",
+    "Medium": "https://medium.com/@anand_sahu"
 }
 
 

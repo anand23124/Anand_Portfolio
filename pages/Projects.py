@@ -2,6 +2,10 @@ import streamlit as st
 import os
 # --- PROJECTS ---
 BLOGS = {
+    "While Studying Batch Normalization , Did You Wonder: Why Don’t We Call It Batch Standardization?": {
+        "link": "https://www.linkedin.com/posts/anandsahu_deeplearning-machinelearning-ai-activity-7268134713477771264-Q6Wi?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/batch.png",  
+    },
     "Hume.ai: Emotionally Intelligent AI for a Better Tomorrow": {
         "link": "https://www.linkedin.com/posts/anandsahu_artificialintelligence-emotionalintelligence-activity-7267031848931708928-BIqU?utm_source=share&utm_medium=member_desktop",
         "image": "./assets/blogs/hume.png",  
