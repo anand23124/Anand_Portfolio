@@ -163,38 +163,75 @@ menu_option = st.sidebar.radio(
     options=[ "Gen AI Projects","PyTorch Projects","Blogs"],
     index=0,  # Default to "All Projects"
 )
+from PIL import Image
 
-import os
-import streamlit as st
-
-import os
-import streamlit as st
-
-# Function to display blogs with a fallback for missing images
-def display_projects(blog_dict, image_width=300):
-    for blog_name, blog_details in blog_dict.items():
-        image_path = blog_details.get("image", "")
+def display_projects(blog_dict, image_width=300, image_height=200, columns=3):
+    blog_items = list(blog_dict.items())
+    
+    # Custom CSS for consistent spacing and layout
+    st.markdown(
+        """
+        <style>
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .project-card img {
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    
+    for i in range(0, len(blog_items), columns):
+        # Create a row of columns
+        cols = st.columns(columns)
         
-        # Check if the image is a local file and exists
-        if image_path.startswith("./assets") and os.path.exists(image_path):
-            st.image(
-                image_path,
-                caption=blog_name,
-                use_container_width=False,
-                width=image_width,
-            )
-        else:
-            # Display the placeholder image link
-            st.image(
-                image_path,  # The placeholder link is stored in the dictionary
-                caption=blog_name,
-                use_container_width=False,
-                width=image_width,
-            )
-        
-        # Add the link to the blog below the image
-        st.markdown(f"[Read More]({blog_details['link']})", unsafe_allow_html=True)
-        st.write("---")  # Divider between blogs
+        # Populate each column with blog details
+        for col, (blog_name, blog_details) in zip(cols, blog_items[i : i + columns]):
+            with col:
+                image_path = blog_details.get("image", "")
+                
+                # Start the project card
+                st.markdown('<div class="project-card">', unsafe_allow_html=True)
+                
+                # Check if the image is a local file and exists
+                if image_path.startswith("./assets") and os.path.exists(image_path):
+                    try:
+                        img = Image.open(image_path)
+                        img = img.resize((image_width, image_height))
+                        st.image(
+                            img,
+                            caption=None,  # We'll add the caption manually for better styling
+                            use_container_width=False,
+                        )
+                    except Exception as e:
+                        st.error(f"Error loading image for {blog_name}: {e}")
+                else:
+                    # Display the placeholder image link
+                    st.image(
+                        image_path,  # The placeholder link is stored in the dictionary
+                        caption=None,  # We'll add the caption manually for better styling
+                        use_container_width=False,
+                        width=image_width,
+                    )
+                
+                # Add the blog name and link
+                st.markdown(f"**{blog_name}**", unsafe_allow_html=True)
+                st.markdown(f"[Read More]({blog_details['link']})", unsafe_allow_html=True)
+                
+                # End the project card
+                st.markdown('</div>', unsafe_allow_html=True)
 
 
 # Display projects based on selected category
