@@ -2,6 +2,22 @@ import streamlit as st
 import os
 # --- PROJECTS ---
 BLOGS = {
+    "🚀 Understanding the Building Blocks of LLMs: Characters, Tokens, and Chunks! 🧩": {
+        "link": "https://www.linkedin.com/posts/anandsahu_decoding-the-jargon-characters-tokens-activity-7271018162869915648-3kU2?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/token.png",  
+    },
+    "🚀 Understanding LLM API Pricing: A Deep Dive into Gemini API 💡": {
+        "link": "https://www.linkedin.com/posts/anandsahu_how-do-llm-apis-charge-money-a-simple-guide-activity-7270655708109361152-AVIq?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/api.png",  
+    },
+    "🚀 Demystifying Quantization in LLMs 🧠": {
+        "link": "https://www.linkedin.com/posts/anandsahu_simplifying-quantization-in-llms-gguf-gptq-activity-7270427845716271104-eLtQ?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/quant.png",  
+    },
+    "🌟 Exploring the Evolution of Generative AI 🚀": {
+        "link": "https://www.linkedin.com/posts/anandsahu_the-journey-of-generative-ai-from-deep-learning-activity-7269338515660816385-iu3v?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/evolution.png",  
+    },
     "While Studying Batch Normalization , Did You Wonder: Why Don’t We Call It Batch Standardization?": {
         "link": "https://www.linkedin.com/posts/anandsahu_deeplearning-machinelearning-ai-activity-7268134713477771264-Q6Wi?utm_source=share&utm_medium=member_desktop",
         "image": "./assets/blogs/batch.png",  
