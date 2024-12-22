@@ -2,6 +2,26 @@ import streamlit as st
 import os
 # --- PROJECTS ---
 BLOGS = {
+    "🚀 what is context length in AI models? Does a Huge Model Always Mean a Huge Context Length? 🤔": {
+        "link": "https://www.linkedin.com/posts/anandsahu_what-is-context-length-in-ai-models-activity-7275004375318626304-MIzX?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/context.png",  
+    },
+    "🚀 Fine-Tuned Models vs. Large Language Models: Which Should You Choose? 🤔": {
+        "link": "https://www.linkedin.com/posts/anandsahu_fine-tuned-models-vs-llms-how-to-choose-activity-7274642002753847296-YJQf?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/FINEvsLLM.png",  
+    },
+    "🚀 Choosing the Right Python Version for Your Projects: Why Not Always the Latest? 🐍": {
+        "link": "https://www.linkedin.com/posts/anandsahu_why-not-the-latest-choosing-the-right-python-activity-7273215506130616320-SgXd?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/version.png",  
+    },
+    "🚀 Discover the Future of LLM Optimization! 🔍": {
+        "link": "https://www.linkedin.com/posts/anandsahu_rag-vs-fine-tuning-exploring-top-emerging-activity-7272830051543363584-SKf9?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/RAGvsFine.png",  
+    },
+    "💡 Building a RAG System Without LangChain! 💡": {
+        "link": "https://www.linkedin.com/posts/anandsahu_building-a-rag-retrieval-augmented-generation-activity-7272105309995741184-8hDi?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/blogs/pine.png",  
+    },
     "🚀 Understanding the Building Blocks of LLMs: Characters, Tokens, and Chunks! 🧩": {
         "link": "https://www.linkedin.com/posts/anandsahu_decoding-the-jargon-characters-tokens-activity-7271018162869915648-3kU2?utm_source=share&utm_medium=member_desktop",
         "image": "./assets/blogs/token.png",  
@@ -43,8 +63,14 @@ BLOGS = {
         "image": "./assets/blogs/knowlegegraph.png",  
     },
 }
+# --- MLOPS PROJECTS ---
 
-
+MLOPS_PROJECTS = {
+    "🔧 Demonstrating My Skills Through a Production-Ready MLOps Project!": {
+        "link": "https://www.linkedin.com/posts/anandsahu_mlops-aws-docker-activity-7276539257219858432-6TYx?utm_source=share&utm_medium=member_desktop",
+        "image": "./assets/mlops/mlops.png",  
+    }
+}
 # --- PYTORCH PROJECTS ---
 PYTORCH_PROJECTS = {
     "⚡ RAG Flash Reranker": {
@@ -176,7 +202,7 @@ st.write("---")
 # Sidebar Option Menu
 menu_option = st.sidebar.radio(
     "Select Category",
-    options=[ "Gen AI Projects","PyTorch Projects","Blogs"],
+    options=["Blogs","Gen AI Projects","PyTorch Projects","MLOPS Projects"],
     index=0,  # Default to "All Projects"
 )
 from PIL import Image
@@ -260,6 +286,9 @@ elif menu_option == "PyTorch Projects":
 elif menu_option == "Blogs":
     st.subheader("✍️ Blogs")
     display_projects(BLOGS)
+elif menu_option == "MLOPS Projects":
+    st.subheader("🤖 MLOPS Projects")
+    display_projects(MLOPS_PROJECTS)
 
 # Footer
 st.write("---")
