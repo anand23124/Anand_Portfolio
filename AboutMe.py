@@ -64,7 +64,7 @@ for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
 
 # --- EXPERIENCE & QUALIFICATIONS ---
 st.write('\n')
-st.subheader("About Me")
+st.subheader("About Me/Myself")
 st.write(
     """
 - 🚀 Experienced in building AI-driven solutions like AI Chatbots and Image Extractors.
